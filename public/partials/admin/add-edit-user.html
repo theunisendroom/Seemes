@@ -1,0 +1,30 @@
+<h1 align="center">User Maintenance</h1>
+<hr />
+
+<div class="form-group col-md-12">
+	<div class="col-md-3">
+		<table class="table">
+			<tr>
+				<th><div align="center">Users</div></th>
+				<th><div align="center">Actions</div></th>
+			</tr>
+			<tr ng-repeat="user in allUsers">
+				<td align="center">{{user.username}}</td>
+				<td align="center"><a ng-href="#" ng-click="deleteUser(user)">Delete</a></td>
+			</tr>
+		</table>
+	</div>
+	<div class="pull-right">
+		<input type="button" ng-click="addingUser = true" class="btn btn-success" ng-show="!addingUser" value="New user">
+	</div>
+	<div ng-show="addingUser" class="col-md-7 pull-right">
+		<div class="form-group col-md-8">
+			<label>Username</label>
+			<input class="form-control" type="text" ng-model="newUser.username" /> 
+			<label>Password</label> 
+			<input class="form-control" type="password" ng-model="newUser.password" />
+			<hr/>
+			<input type="button" class="btn btn-success pull-right" value="Save" ng-click="saveUser()">
+		</div>
+	</div>
+</div>

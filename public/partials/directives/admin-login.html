@@ -1,0 +1,6 @@
+<div ng-if=loggedInUser>
+    <div align="right">Welcome {{loggedInUser}} |  <a ng-click="switchView()">{{currentRoleView.displayText}}</a> | <a href ng-click='logout()'>Logout</a></div>
+</div>
+<div ng-if='!loggedInUser && !onLoginScreen'>
+    <div align="right"><a href ng-click='login()'>Login</a></div>
+</div>
